@@ -1,0 +1,11 @@
+# https://developers.cloudflare.com/workers/wrangler/configuration/
+
+name = "reverse-proxy-with-cors"
+main = "src/worker.js"
+compatibility_date = "2025-12-08"
+
+[limits]
+cpu_ms = 5
+
+[observability]
+enabled = false
