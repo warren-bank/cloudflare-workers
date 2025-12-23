@@ -10,3 +10,7 @@ Assorted collection of Cloudflare Workers:
     * [URL of Cloudflare Worker](https://reverse-proxy-github-markdown.warren-bank.workers.dev)
     * [URL of GitHub markdown file](https://github.com/warren-bank/crx-LiveNewsOn/blob/webmonkey-userscript/es5/BOOKMARKS.md)
     * [URL to view proxied markdown](https://reverse-proxy-github-markdown.warren-bank.workers.dev/https://github.com/warren-bank/crx-LiveNewsOn/blob/webmonkey-userscript/es5/BOOKMARKS.md?target=_blank&padding=20)
+* [reverse-proxy-with-cors](https://github.com/warren-bank/cloudflare-workers/tree/reverse-proxy-with-cors)
+  - reverse proxy to conditionally inject HTTP response headers that permit CORS
+  - usage:
+    * prepend URL of Cloudflare Worker to the target URL
