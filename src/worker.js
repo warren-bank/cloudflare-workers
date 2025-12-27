@@ -25,7 +25,7 @@ async function handleProxyRequest(request, env, ctx) {
   if (!validate(url))
     return handleRedirectResponse(url)
 
-  const target_url = url.pathname.substring(1)
+  const target_url = url.pathname.substring(1) + url.search
 
   const proxyRequest    = new Request(target_url, request_options)
   const proxyResponse   = await fetch(proxyRequest)
@@ -42,13 +42,16 @@ async function handleProxyRequest(request, env, ctx) {
 
 function validate(url) {
   const pathname = url.pathname
+  if (!pathname || !pathname.length || !(pathname[0] === '/'))
+    return false
 
-  return (pathname.length && (pathname[0] === '/') && allow_URLs_regex.test(pathname.substring(1)))
+  const target_url = pathname.substring(1) + url.search
+  return allow_URLs_regex.test(target_url)
 }
 
 function handleRedirectResponse(url) {
   const pathname   = url.pathname
-  const target_url = pathname.substring(1)
+  const target_url = pathname.substring(1) + url.search
 
   if (target_url.substring(0,4).toLowerCase() === 'http') {
     // 301 Moved Permanently
