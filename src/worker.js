@@ -3,6 +3,13 @@
 
 const allow_URLs_regex = /^https?:\/\/(?:www\.)?httpbin\.org\/ip$/i
 
+// https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options
+const request_options = {
+  "headers": {
+    "User-Agent": "Chrome 100"
+  }
+}
+
 // -----------------------------------------------------------------------------
 // do not edit:
 
@@ -20,7 +27,7 @@ async function handleProxyRequest(request, env, ctx) {
 
   const target_url = url.pathname.substring(1)
 
-  const proxyRequest    = new Request(target_url)
+  const proxyRequest    = new Request(target_url, request_options)
   const proxyResponse   = await fetch(proxyRequest)
   const responseHeaders = new Headers(proxyResponse.headers)
 
