@@ -14,3 +14,9 @@ Assorted collection of Cloudflare Workers:
   - reverse proxy to conditionally inject HTTP response headers that permit CORS
   - usage:
     * prepend URL of Cloudflare Worker to the target URL
+* [corsproxy](https://github.com/warren-bank/cloudflare-workers/tree/corsproxy)
+  - reverse proxy to conditionally inject HTTP response headers that permit CORS
+  - [usage](https://github.com/warren-bank/cloudflare-workers/tree/corsproxy#usage):
+    * API is compatible with [corsproxy.io](https://corsproxy.io/)
+    * supports per-request [header overrides](https://corsproxy.io/docs/header-rewrites/) via query parameters
+    * supports restricting access to requests that include a hard-coded [API key](https://corsproxy.io/docs/get-api-key/)
