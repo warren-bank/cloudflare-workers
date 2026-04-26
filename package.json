@@ -1,0 +1,12 @@
+{
+  "name": "corsproxy",
+  "private": true,
+  "version": "0.0.0",
+  "main": "./src/worker.js",
+  "scripts": {
+    "start":  "wrangler dev",
+    "login":  "wrangler login",
+    "whoami": "wrangler whoami",
+    "deploy": "wrangler deploy"
+  }
+}
